@@ -104,7 +104,8 @@ li {
 }
 
 .clearbtn:hover {
-  background-color: #e5e1e1; /* Update color to darker shade on hover */
+  background-color: #f16565;
+  color: whitesmoke; /* Update color to darker shade on hover */
 }
 
 .max-width-section{
@@ -116,9 +117,8 @@ li {
 
 .pages {
   position: absolute;
-  // bottom:0%;
-  right: 2%;
-}
+  
+ }
 
 .noOutput{
   display: flex;

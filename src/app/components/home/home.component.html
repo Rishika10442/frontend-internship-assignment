@@ -9,7 +9,7 @@
       placeholder="Search Books"
       class="tw-border-0 tw-bg-inherit"
     >
-    <button class="clear-button" mat-icon-button (click)="clearResults()">
+    <button class="clearbtn" mat-icon-button (click)="clearResults()">
       <mat-icon  aria-label="Clear Search">clear</mat-icon>
     </button>
   </div>
@@ -29,15 +29,15 @@
     <div class="loader" *ngIf="isLoading">
     </div>
     <div *ngIf="allBooks.length > 0">
-      <div class="table-wrapper">
+      <div class="tablediv">
         <front-end-internship-assignment-table-view
         [booksList]="allBooks"
         [subjectName]="searchQuery"
         ></front-end-internship-assignment-table-view>
         
 
-        <!-- Pagination buttons -->
-        <div class="pagination-buttons">
+        
+        <div class="pages">
           <button (click)="onPreviousPage()" [disabled]="currentPage===0">Previous</button>
           <span>{{ currentPage + 1 }}/{{ totalPages }}</span>
           <button (click)="onNextPage()" [disabled]="isLastPage()">Next</button>
@@ -45,8 +45,8 @@
       </div>
     </div>
 
-    <!-- Edge case handling for no search results -->
-    <div class="noResult" *ngIf="allBooks.length === 0 && searchQuery && !isLoading && !error">
+    
+    <div class="noOutput" *ngIf="allBooks.length === 0 && searchQuery && !isLoading && !error">
       <h1>No results found for your search query</h1>
 
       <!-- Move to previous results in case there are no more results to display -->
