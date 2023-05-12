@@ -1,31 +1,151 @@
-.header {
-  @apply
-  tw-flex
-  tw-flex-row
-  tw-justify-between
-  tw-items-center
-  tw-rounded-4-px
-  tw-p-12-px
-  tw-m-24-px;
-  background: linear-gradient(146deg, #e1eeff 19.67%, #ffe4fb 127.56%);
+.tw-flex.tw-flex-col {
+  height: 100vh; /* Set the container height to 100% of the viewport height */
 }
 
-.search-button {
+
+.header {
   @apply
-  tw-border 
-  tw-border-solid 
-  tw-border-dark-border
-  tw-rounded-4-px
-  tw-flex
-  tw-justify-center
-  tw-h-60-px
-  tw-w-200-px
+    tw-flex
+    tw-flex-row
+    tw-justify-between
+    tw-items-center
+    tw-rounded-4-px
+    tw-p-12-px
+    tw-shadow-lg;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tw-font-600 {
+  font-weight: 600;
+}
+
+.tw-text-24-px {
+  font-size: 24px;
+}
+
+.tw-text-white {
+  color: white;
+}
+
+.search-section {
+  @apply
+    tw-flex
+    tw-flex-row
+    tw-pl-2;
+     /* Center the search section horizontally */
+  background-color:  #e0e0d1; /* Set the background color to light grey */
+  border-radius: 8px; /* Add rounded corners */
+  height: 40px; /* Adjust the height of the search section */
+  width: 400px; /* Adjust the width of the search section */
+  margin-right: 150px; /* Add some spacing to the right */
+}
+
+.search-box {
+  @apply
+    tw-flex
+    tw-items-center; /* Center the content vertically within the search box */
+}
+
+.search-icon {
+  @apply
+    tw-pt-0.5;
+}
+.search-icon1 {
+  @apply
+    tw-pt-2;
+}
+
+input {
+  @apply
+
+    tw-border-0
+    tw-bg-inherit;
+    height:40px;
 }
 
 .trending-subjects {
   @apply
-  tw-bg-table-header-bg
-  tw-p-12-px
-  tw-rounded-4-px
-  tw-shadow-lg
+    tw-flex
+    tw-flex-col
+    tw-flex-grow
+    tw-w-1/6
+    tw-font-600
+    tw-text-24-px
+    tw-p-12-px
+    tw-rounded-4-px
+    tw-shadow-lg;
+  background: linear-gradient(to bottom, #4a00f8, #7600f0, #9300e8, #a900e0, #bb08d9);
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+}
+
+ul {
+  @apply
+    tw-list-none
+    tw-pl-0;
+}
+
+li {
+  @apply
+    tw-text-24-px
+    tw-cursor-pointer
+    tw-p-12-px;
+}
+
+
+.clearbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.clearbtn:hover {
+  background-color: #e5e1e1; /* Update color to darker shade on hover */
+}
+
+.max-width-section{
+  width: 100%;
+}
+.tablediv {
+  position: relative;
+}
+
+.pages {
+  position: absolute;
+  // bottom:0%;
+  right: 2%;
+}
+
+.noOutput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spin 0.8s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
